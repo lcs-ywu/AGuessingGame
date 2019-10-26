@@ -29,7 +29,6 @@ class ViewController: UIViewController {
         //class 'AVSpeechSynthesizer'
         let synthesizer = AVSpeechSynthesizer()
         
-        
         //Make a string that contains what we want the conputer to say
         let message = "I'm thinking of a number between 1 and 100. Guess what it is."
         
@@ -40,8 +39,21 @@ class ViewController: UIViewController {
         //Speak the message
         synthesizer.speak(utterance)
         
+        //Report the target number to
+         print("For testing purposes,the random number is \(targetNumber)")
     }
-
-
+    
+    //Will be used to check a guess
+    @IBAction func checkGuess(_ sender: Any) {
+        
+        //Obtain the guess value from the text field
+        let guessText = submittedGuess.text!
+        let guessNumber = Int(guessText)!
+        
+        //For testing purposes, what was the guess?
+        print("For testing purposes, the guss made is \(targetNumber)")
+       
+    }
+    
 }
 
